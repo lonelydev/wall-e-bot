@@ -3,6 +3,6 @@ FROM public.ecr.aws/lambda/nodejs:14
 # can also create docker ignore file and copy all
 COPY *.js package*.json /var/task/
 
-RUN npm install
+RUN npm ci --production
 
 CMD [ "app.handler" ]
