@@ -9,8 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@slack/bolt": "^3.13.1",
     "aws-sdk": "^2.1403.0",
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "gulp": "^4.0.0",
+    "gulp-typescript": "^5.0.0",
+    "typescript": "^5.1.6"
   }
 }
