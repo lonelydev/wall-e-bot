@@ -17,8 +17,10 @@ const app = new App({
 });
 
 // Listens to incoming messages that contain "hello"
-app.message('hello', async ({ message, say }) => {
+app.message('hello', async ({ message, say, logger }) => {
     var genericMessageEvent = message as GenericMessageEvent;
+    logger.info(genericMessageEvent);
+
     // say() sends a message to the channel where the event was triggered
     await say({
       blocks: [
@@ -66,6 +68,7 @@ export const handler: Handler = async (event: APIGatewayEvent, context: Context)
         console.log(`Event: ${JSON.stringify(event, null, 2)}`);
         console.log(`Context: ${JSON.stringify(context, null, 2)}`);
         const handler = await awsLambdaReceiver.start();
+        return handler(event, context, null);
     } catch (err) {
         console.log(err);
         return {
