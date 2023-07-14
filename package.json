@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/*.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=built/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,8 +18,14 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.119",
+    "esbuild": "^0.18.12",
     "gulp": "^4.0.0",
-    "gulp-typescript": "^5.0.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-inject": "^5.0.5",
+    "gulp-rimraf": "^1.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^5.0.1",
     "typescript": "^5.1.6"
   }
 }
